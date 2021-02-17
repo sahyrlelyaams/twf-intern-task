@@ -1,0 +1,11 @@
+.logged-in{
+    visibility: collapse;
+}
+
+#user-info{
+    visibility: collapse;
+}
+
+.logged-out{
+    visibility: collapse;
+}

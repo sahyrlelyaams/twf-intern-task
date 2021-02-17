@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Create Simple Login Form Design In Bootstrap 5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="login-form bg-light mt-4 p-4">
+                    <form class="row g-3">
+                        <h4 id="heading">Sign In to Service</h4>
+                        <p id="user-info"></p>
+                        <div class="col-12 sign-in">
+                            <label>E-mail</label>
+                            <input type="email" name="email" class="form-control" placeholder="E-mail">
+                        </div>
+                        <div class="col-12 sign-in">
+                            <label>Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="col-7 sign-in">
+                            <button type="submit" class="btn btn-success float-end" id="signin-btn">Sign In</button>
+                        </div>
+                        <div class="col-12 logged-in">
+                            <label>Birth Place</label>
+                            <input type="text" name="place" class="form-control" placeholder="Eg. Bengaluru">
+                        </div>
+                        <div class="col-12 logged-in">
+                            <label>Age</label>
+                            <input type="text" name="age" class="form-control" placeholder="Eg. 20">
+                        </div>
+                        <div class="col-7 logged-in">
+                            <button type="submit" class="btn btn-secondary float-end" id="submit-btn">Submit</button>
+                        </div>
+                        <div class="col-7 logged-out">
+                            <button type="submit" class="btn btn-warning float-end" id="logout-btn">Logout</button>
+                        </div>
+                    </form>
+                    <div class="mt-2">
+                        <p class="text-danger" id="auth-error"></p>
+                    </div>
+                    <hr class="mt-4">
+                    <div class="col-12 sign-in">
+                        <p class="text-center mb-0">No Account? <a href="signup.html">Sign Up</a> Here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+
+<script>
+// Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyBcZHn_sW4ouqVaIq5eHLakTcncDDHHSqc",
+authDomain: "login-logout-auth-system.firebaseapp.com",
+projectId: "login-logout-auth-system",
+storageBucket: "login-logout-auth-system.appspot.com",
+messagingSenderId: "1094099879178",
+appId: "1:1094099879178:web:8d5b4f05277c79510126f3"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+db.settings({timestampsInSnapshots: true});
+
+</script>
+<!-- Script to handle form for Sign-Up/Sign-In -->
+<script src="Script/index.js"></script>
+</body>
+</html>
